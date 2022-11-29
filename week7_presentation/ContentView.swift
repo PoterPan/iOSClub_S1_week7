@@ -16,11 +16,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(movieName.indices,id: \.self) { x in
-                    NavigationLink {
-                        MovieDetailView(name: movieName[x], image: movieImage[x], rating: movieRating[x])
-                    } label: {
+                    NavigationLink(destination: MovieDetailView(name: movieName[x], image: movieImage[x], rating: movieRating[x]), label: {
                         MovieRowView(image: movieImage[x], name: movieName[x], date: movieDate[x])
-                }
+                    })
+                    
                 }
 
             }
